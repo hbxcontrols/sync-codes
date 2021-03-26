@@ -10,7 +10,7 @@ module.exports = {
 	 * @return {array}
 	 */
 	getAllowedDevices() {
-		return this.allowedDevices;
+		return this.allowedDevices
 	},
 
 
@@ -20,11 +20,11 @@ module.exports = {
 	 * @return {array}	Array of sync code fragments
 	 */
 	split(code) {
-		const parts = code.split('-');
+		const parts = code.split('-')
 
-		if(parts.length !== 2) throw Error("Invalid sync code structure.");
+		if(parts.length !== 2) throw Error("Invalid sync code structure.")
 
-		return parts;
+		return parts
 	},
 
 
@@ -39,7 +39,7 @@ module.exports = {
 		}
 
 		if(!parts.series || !parts.device || !parts.identifier) {
-			throw  Error("Missing sync code parts. Must be an object containing: series, device, identifier.";)
+			throw  Error("Missing sync code parts. Must be an object containing: series, device, identifier.")
 		}
 
 		return this.validate([parts.series.concat(parts.device), parts.identifier].join('-'))
@@ -52,14 +52,14 @@ module.exports = {
 	 * @return {string} A single letter representing the sync code series
 	 */
 	series(code) {
-		const series = code.charAt(0);
+		const series = code.charAt(0)
 
 		// Throw error if series is not a single letter.
 		if(!series.match(/^[A-Za-z]{1}$/gm)) {
 			throw Error("Invalid sync code series.")
 		}
 
-		return series.toUpperCase();
+		return series.toUpperCase()
 	},
 
 
@@ -69,8 +69,8 @@ module.exports = {
 	 * @return {string} A 3 digit string represeting the sync code device type
 	 */
 	device(code) {
-		const parts = this.split(code);
-		const device = parts[0].trim().substr(1);
+		const parts = this.split(code)
+		const device = parts[0].trim().substr(1)
 
 		// Throw error if device type is not a 3 character string
 		if(!device.match(/^[A-Za-z]{3}$/gm)) {
@@ -92,8 +92,8 @@ module.exports = {
 	 * @return {string} A 4 digit integer represeting the sync code identifier
 	 */
 	identifier(code) {
-		const parts = this.split(code);
-		const identifier = parts[1].trim();
+		const parts = this.split(code)
+		const identifier = parts[1].trim()
 
 		// Throw error if not a 4 digit number.
 		if(!identifier.match(/^[0-9]{4}$/gm)) {
@@ -101,7 +101,7 @@ module.exports = {
 		}
 
 		// Return identifier as an integer so sequences can be discovered.
-		return identifier;
+		return identifier
 	},
 
 
@@ -112,12 +112,12 @@ module.exports = {
 	 */
 	validate(code) {
 		// Validate all sync code segments
-		const series = this.series(code);
-		const device = this.device(code);
-		const identifier = this.identifier(code);
+		const series = this.series(code)
+		const device = this.device(code)
+		const identifier = this.identifier(code)
 		const syncCode = [series.concat(device), identifier].join('-')
 
-		return syncCode.toUpperCase();
+		return syncCode.toUpperCase()
 	},
 
 
@@ -128,6 +128,6 @@ module.exports = {
 			code = code.slice(0, 4) + '-' + code.slice(4)
 		}
 
-		return code;
+		return code
 	}
 }
