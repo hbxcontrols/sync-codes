@@ -1,0 +1,9 @@
+{
+  "name": "@hbxcontrols/sync-codes",
+  "version": "1.0.4",
+  "description": "A set of tools for handling and validating HBX Controls device sync codes",
+  "main": "src",
+  "scripts": {},
+  "author": "Chris Tohill <graphics@hbxcontrols.com>",
+  "license": "MIT"
+}
