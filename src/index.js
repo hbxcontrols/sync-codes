@@ -22,7 +22,7 @@ module.exports = {
 	split(code) {
 		const parts = code.split('-')
 
-		if(parts.length !== 2) throw Error("Invalid sync code structure.")
+		if(parts.length !== 2) throw Error(`Invalid sync code structure. (${code})`)
 
 		return parts
 	},
