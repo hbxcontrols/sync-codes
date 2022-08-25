@@ -3,7 +3,7 @@
  * Sync code structure: Series, Device, Identifier [A][BTU]-[1234] // ABTU-1234
  */
 module.exports = {
-	allowedDevices: ['BTU', 'CPU', 'ECO', 'FLO', 'PRE', 'SNO', 'SUN', 'THM', 'ZON'],
+	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'SNO', 'SUN', 'SGL', 'THM', 'ZON'],
 
 	/**
 	 * Returns an array of allowed device types 
