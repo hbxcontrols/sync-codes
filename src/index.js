@@ -4,6 +4,37 @@
  */
 module.exports = {
 	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'SNO', 'SUN', 'SGL', 'THM', 'ZON'],
+	deviceDescriptions: {
+		BTU: 'Energy Sensor',
+		CPU: 'Boiler Controller',
+		ECO: 'Geothermal Controller',
+		ENG: 'Energy Sensor',
+		FLO: 'Flow Sensor',
+		FLW: 'Flow Sensor',
+		PRE: 'Pressure Sensor',
+		PRS: 'Pressure Sensor',
+		SNO: 'Snow-melt Controller',
+		SUN: 'Solar Controller',
+		SGL: 'Single-zone Thermostat',
+		THM: 'Thermostat',
+		ZON: 'Zone Controller'
+	},
+
+	/**
+	 * Returns a list of device descriptions
+	 * @return {array}
+	 */
+	getDeviceDescriptions() {
+		return this.deviceDescriptions
+	},
+
+	/**
+	 * Returns an single device description
+	 * @return {array}
+	 */
+	getDeviceDescription(device) {
+		return this.deviceDescriptions[device]
+	},
 
 	/**
 	 * Returns an array of allowed device types 
