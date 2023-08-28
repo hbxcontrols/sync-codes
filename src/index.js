@@ -87,7 +87,7 @@ module.exports = {
 
 		// Throw error if series is not a single letter.
 		if(!series.match(/^[A-Za-z]{1}$/gm)) {
-			throw new Error("Invalid sync code series.")
+			throw new Error(`Invalid sync code series. (${code})`)
 		}
 
 		return series.toUpperCase()
@@ -105,12 +105,12 @@ module.exports = {
 
 		// Throw error if device type is not a 3 character string
 		if(!device.match(/^[A-Za-z]{3}$/gm)) {
-			throw new Error("Invalid sync code device type.")
+			throw new Error(`Invalid sync code device type. (${code})`)
 		}
 
 		// Throw error if device type is not allowed.
 		if(!this.allowedDevices.includes(device.toUpperCase())) {
-			throw new Error("Device type not allowed.")
+			throw new Error(`Device type not allowed. (${code})`)
 		}
 
 		return device.toUpperCase()
@@ -128,7 +128,7 @@ module.exports = {
 
 		// Throw error if not a 4 digit number.
 		if(!identifier.match(/^[0-9]{4}$/gm)) {
-			throw new Error("Invalid sync code identifier.")
+			throw new Error(`Invalid sync code identifier. (${code})`)
 		}
 
 		// Return identifier as an integer so sequences can be discovered.
