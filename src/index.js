@@ -151,6 +151,18 @@ module.exports = {
 		return syncCode.toUpperCase()
 	},
 
+	/**
+	 * Validate a sync code and return boolean instead of throwing an error
+	 * @param {string} code A device sync code
+	 * @returns {boolean} 
+	 */
+	isValid(code) {
+		try {
+			return Boolean(this.validate(code))
+		} catch(error) {
+			return false
+		}
+	}
 
 
 
