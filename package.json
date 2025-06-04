@@ -1,15 +1,15 @@
 {
-  "name": "@hbxcontrols/sync-codes",
-  "version": "1.0.9",
-  "description": "A set of tools for handling and validating HBX Controls device sync codes",
-  "main": "src",
-  "scripts": {
-    "release:dev": "npm version 0.0.0-dev --no-git-tag-version && npm publish --tag dev",
-    "release:stable": "standard-version && git push --follow-tags && npm publish"
-  },
-  "author": "Chris Tohill <graphics@hbxcontrols.com>",
-  "license": "MIT",
-  "dependencies": {
-    "standard-version": "^9.5.0"
-  }
+    "name": "@hbxcontrols/sync-codes",
+    "version": "1.0.9",
+    "description": "A set of tools for handling and validating HBX Controls device sync codes",
+    "main": "src",
+    "scripts": {
+        "release:dev": "npm version prerelease --preid=dev --no-git-tag-version && npm publish --tag dev && git checkout -- package.json package-lock.json",
+        "release:stable": "standard-version && git push --follow-tags && npm publish"
+    },
+    "author": "Chris Tohill <graphics@hbxcontrols.com>",
+    "license": "MIT",
+    "dependencies": {
+        "standard-version": "^9.5.0"
+    }
 }
