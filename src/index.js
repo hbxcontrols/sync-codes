@@ -20,7 +20,7 @@ module.exports = {
 	},
 
 	/**
-	 * Returns an array of allowed device types 
+	 * Returns an array of allowed device types
 	 * @return {array}
 	 */
 	getAllowedDevices() {
@@ -60,7 +60,7 @@ module.exports = {
 
 
 	/**
-	 * Returns the sync code series 
+	 * Returns the sync code series
 	 * @param  {string} A device sync code
 	 * @return {string} A single letter representing the sync code series
 	 */
@@ -136,7 +136,7 @@ module.exports = {
 	/**
 	 * Validate a sync code and return boolean instead of throwing an error
 	 * @param {string} code A device sync code
-	 * @returns {boolean} 
+	 * @returns {boolean}
 	 */
 	isValid(code) {
 		try {
