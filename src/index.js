@@ -160,7 +160,7 @@ module.exports = {
 		return code
 	},
 
-	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SGL', 'THM', 'ZON'],
+	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SGL', 'SOL', 'THM', 'ZON'],
 
 	deviceDescriptions: {
 		BTU: 'Energy Sensor',
@@ -174,6 +174,7 @@ module.exports = {
 		RTR: 'Access Point',
 		SNO: 'Snow-melt Controller',
 		SUN: 'Solar Controller',
+		SOL: 'Solar Controller',
 		SGL: 'Single-zone Thermostat',
 		THM: 'Thermostat',
 		ZON: 'Zone Controller'
@@ -191,6 +192,7 @@ module.exports = {
 		RTR: 'RTR-0100',
 		SNO: 'SNO-0600',
 		SUN: 'SESF-3221',
+		SOL: 'SESF-2-3221',
 		SGL: 'SGL-0600',
 		THM: 'THM-0600',
 		ZON: 'ZON-0600'
