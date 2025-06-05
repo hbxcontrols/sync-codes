@@ -1,6 +1,6 @@
 {
 	"name": "@hbxcontrols/sync-codes",
-	"version": "1.0.10-dev.0",
+	"version": "1.0.10-dev.1",
 	"description": "A set of tools for handling and validating HBX Controls device sync codes",
 	"main": "src",
 	"scripts": {
