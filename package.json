@@ -7,15 +7,16 @@
   "module": "dist/index.mjs",
   "scripts": {
     "prepublishOnly": "npm run build",
-    "build": "npm run build:cjs && npm run build:esm",
-    "build:cjs": "esbuild src/index.js --outfile=dist/index.cjs --format=cjs",
+    "build": "rollup -c",
+    "build:cjs": "esbuild src/index.js --outfile=dist/index.cjs --format=cjs --platform=node --target=node20",
     "build:esm": "esbuild src/index.js --outfile=dist/index.mjs --format=esm",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "author": "Chris Tohill <graphics@hbxcontrols.com>",
   "license": "MIT",
   "devDependencies": {
-    "esbuild": "^0.25.10",
+    "@rollup/plugin-commonjs": "^28.0.6",
+    "rollup": "^4.50.2",
     "standard-version": "^9.5.0"
   },
   "exports": {
