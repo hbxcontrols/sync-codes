@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/hbxcontrols/sync-codes/compare/v1.0.9...v2.0.1) (2025-09-17)
+
 ### [1.0.9](https://github.com/hbxcontrols/sync-codes/compare/v1.0.8...v1.0.9) (2024-05-16)
 
 ### [1.0.8](https://github.com/hbxcontrols/sync-codes/compare/v1.0.7...v1.0.8) (2024-05-16)
