@@ -2,7 +2,7 @@
  * A set of tools for handling and validating HBX Controls device sync codes.
  * Sync code structure: Series, Device, Identifier [A][BTU]-[1234] // ABTU-1234
  */
-module.exports = {
+const SyncCodes = {
 	/**
 	 * Returns a list of device descriptions
 	 * @return {array}
@@ -17,6 +17,22 @@ module.exports = {
 	 */
 	getDeviceDescription(device) {
 		return this.deviceDescriptions[device]
+	},
+
+	/**
+	 * Returns a list of device models
+	 * @return {array}
+	 */
+	getDeviceModels() {
+		return this.deviceModels
+	},
+
+	/**
+	 * Returns an single device description
+	 * @return {array}
+	 */
+	getDeviceModel(device) {
+		return this.deviceModels[device]
 	},
 
 	/**
@@ -160,7 +176,7 @@ module.exports = {
 		return code
 	},
 
-	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SGL', 'THM', 'ZON'],
+	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SOL', 'SGL', 'THM', 'ZON'],
 
 	deviceDescriptions: {
 		BTU: 'Energy Sensor',
@@ -174,6 +190,7 @@ module.exports = {
 		RTR: 'Access Point',
 		SNO: 'Snow-melt Controller',
 		SUN: 'Solar Controller',
+		SOL: 'Solar Controller',
 		SGL: 'Single-zone Thermostat',
 		THM: 'Thermostat',
 		ZON: 'Zone Controller'
@@ -191,8 +208,11 @@ module.exports = {
 		RTR: 'RTR-0100',
 		SNO: 'SNO-0600',
 		SUN: 'SESF-3221',
+		SOL: 'SESF2-3221',
 		SGL: 'SGL-0600',
 		THM: 'THM-0600',
 		ZON: 'ZON-0600'
 	}
 }
+
+export default SyncCodes
