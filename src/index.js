@@ -43,6 +43,18 @@ const SyncCodes = {
 		return this.allowedDevices
 	},
 
+	getDeviceCategories() {
+		return this.deviceCategories
+	},
+
+	getDeviceCategoryByKey(key) {
+		return this.deviceCategories.find(item => item.key === key) || null
+	},
+
+	getDeviceCategoryByType(deviceType) {
+		return this.deviceCategories.find(item => item.devices.includes(deviceType)) || null
+	},
+
 	/**
 	 * Returns an array of sync code parts split at hyphen
 	 * @param  {string} A device sync code
@@ -212,7 +224,50 @@ const SyncCodes = {
 		SGL: 'SGL-0600',
 		THM: 'THM-0600',
 		ZON: 'ZON-0600'
-	}
+	},
+
+	deviceCategories: [
+		{
+			key: 'control.zone',
+			name: 'Zone',
+			devices: ['ZON', 'SGL', 'THM']
+		},
+		{
+			key: 'control.geothermal',
+			name: 'Geothermal',
+			devices: ['ECO']
+		},
+		{
+			key: 'control.boiler',
+			name: 'Boiler',
+			devices: ['CPU']
+		},
+		{
+			key: 'control.solar',
+			name: 'Solar',
+			devices: ['SOL', 'SUN']
+		},
+		{
+			key: 'control.snow',
+			name: 'Snowmelt',
+			devices: ['SNO']
+		},
+		{
+			key: 'meter.energy',
+			name: 'Energy',
+			devices: ['BTU', 'ENG']
+		},
+		{
+			key: 'meter.flow',
+			name: 'Flow',
+			devices: ['FLO', 'FLW']
+		},
+		{
+			key: 'meter.pressure',
+			name: 'Pressure',
+			devices: ['PRE', 'PRS']
+		}
+	]
 }
 
 export default SyncCodes
