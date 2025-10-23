@@ -8,8 +8,6 @@
   "scripts": {
     "prepublishOnly": "npm run build",
     "build": "rollup -c",
-    "build:cjs": "esbuild src/index.js --outfile=dist/index.cjs --format=cjs --platform=node --target=node20",
-    "build:esm": "esbuild src/index.js --outfile=dist/index.mjs --format=esm",
     "release": "standard-version && git push --follow-tags && npm publish"
   },
   "author": "Chris Tohill <graphics@hbxcontrols.com>",
