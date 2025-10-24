@@ -1,0 +1,12 @@
+{
+  "branches": [
+    { "name": "main", "channel": "latest" },
+    { "name": "development", "channel": "dev", "prerelease": "dev" }
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/npm",
+    "@semantic-release/github"
+  ]
+}
