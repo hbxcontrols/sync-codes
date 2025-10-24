@@ -13,7 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "@rollup/plugin-commonjs": "^28.0.6",
-    "rollup": "^4.50.2"
+    "rollup": "^4.50.2",
+    "semantic-release": "^24.2.9"
   },
   "exports": {
     ".": {
