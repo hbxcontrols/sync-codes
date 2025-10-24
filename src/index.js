@@ -2,7 +2,7 @@
  * A set of tools for handling and validating HBX Controls device sync codes.
  * Sync code structure: Series, Device, Identifier [A][BTU]-[1234] // ABTU-1234
  */
-module.exports = {
+const SyncCodes = {
 	/**
 	 * Returns a list of device descriptions
 	 * @return {array}
@@ -20,11 +20,39 @@ module.exports = {
 	},
 
 	/**
+	 * Returns a list of device models
+	 * @return {array}
+	 */
+	getDeviceModels() {
+		return this.deviceModels
+	},
+
+	/**
+	 * Returns an single device description
+	 * @return {array}
+	 */
+	getDeviceModel(device) {
+		return this.deviceModels[device]
+	},
+
+	/**
 	 * Returns an array of allowed device types
 	 * @return {array}
 	 */
 	getAllowedDevices() {
 		return this.allowedDevices
+	},
+
+	getDeviceCategories() {
+		return this.deviceCategories
+	},
+
+	getDeviceCategoryByKey(key) {
+		return this.deviceCategories.find(item => item.key === key) || null
+	},
+
+	getDeviceCategoryByType(deviceType) {
+		return this.deviceCategories.find(item => item.devices.includes(deviceType)) || null
 	},
 
 	/**
@@ -160,7 +188,7 @@ module.exports = {
 		return code
 	},
 
-	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SGL', 'SOL', 'THM', 'ZON'],
+	allowedDevices: ['BTU', 'ENG', 'CPU', 'ECO', 'FLO', 'FLW', 'PRE', 'PRS', 'RTR', 'SNO', 'SUN', 'SOL', 'SGL', 'THM', 'ZON'],
 
 	deviceDescriptions: {
 		BTU: 'Energy Sensor',
@@ -192,9 +220,54 @@ module.exports = {
 		RTR: 'RTR-0100',
 		SNO: 'SNO-0600',
 		SUN: 'SESF-3221',
-		SOL: 'SESF-2-3221',
+		SOL: 'SESF2-3221',
 		SGL: 'SGL-0600',
 		THM: 'THM-0600',
 		ZON: 'ZON-0600'
-	}
+	},
+
+	deviceCategories: [
+		{
+			key: 'control.zone',
+			name: 'Zone',
+			devices: ['ZON', 'SGL', 'THM']
+		},
+		{
+			key: 'control.geothermal',
+			name: 'Geothermal',
+			devices: ['ECO']
+		},
+		{
+			key: 'control.boiler',
+			name: 'Boiler',
+			devices: ['CPU']
+		},
+		{
+			key: 'control.solar',
+			name: 'Solar',
+			devices: ['SOL', 'SUN']
+		},
+		{
+			key: 'control.snow',
+			name: 'Snowmelt',
+			devices: ['SNO']
+		},
+		{
+			key: 'meter.energy',
+			name: 'Energy',
+			devices: ['BTU', 'ENG']
+		},
+		{
+			key: 'meter.flow',
+			name: 'Flow',
+			devices: ['FLO', 'FLW']
+		},
+		{
+			key: 'meter.pressure',
+			name: 'Pressure',
+			devices: ['PRE', 'PRS']
+		}
+	]
 }
+
+export default SyncCodes
